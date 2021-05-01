@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <title>Panel</title>
+</head>
+<style>
+    .main{
+        height:100%;
+        width:100%;
+        background:rgb(252, 252, 252);
+    }
+    #images{
+        width:100%;
+        background:rgb(255, 255, 255);
+    }
+    #images img{
+        transform:translate(350%,0px);
+    }
+    #sec > div{
+        float:left;
+    }
+    .card{
+        margin:20px;
+    }
+    </style>
+<body>
+  
+    <div class="main">
+        <div id="images">
+        <a href="index.html"><img src="images/logo.webp"></a>
+        </div>
+        <div id="curve_chart" style="width: 100%; height: 500px"></div>
+        <center> <div id="piechart" class="col-xl-6"></div></center>
+        <div class="col-xl-12" id="sec">
+            <div class="card col-xl-3" style="width: 18rem;">
+                <img class="card-img-top" src="images/jacket.png" alt="Card image cap">
+                <div class="card-body">
+                  <a href="#" class="btn btn-dark">Add Product</a>
+                </div>
+              </div>
+
+              <div class="card col-xl-3" style="width: 18rem;">
+                <img class="card-img-top" src="images/MAIN_PHOTO_4ba13e09-081b-4f0b-a915-1dc8357e0f83_large.webp" alt="Card image cap">
+                <div class="card-body">
+                  <a href="#" class="btn btn-dark">Add Category</a>
+                </div>
+              </div>
+
+              <div class="card col-xl-3" style="width: 18rem;">
+                <img class="card-img-top" src="images/overview.png" alt="Card image cap">
+                <div class="card-body">
+                  <a href="#" class="btn btn-dark">Add Page</a>
+                </div>
+              </div>
+
+              <div class="card col-xl-3" style="width: 18rem;">
+                <img class="card-img-top" src="images/GROWTH.png" alt="Card image cap">
+                <div class="card-body">
+                  <a href="#" class="btn btn-dark">View Analytics</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-12 secview" style="padding:50px;">
+                <div class="col-xl-6" style="float:left;">
+                    <iframe width="100%" height="315"
+src="https://www.youtube.com/embed/MkFVB2sig8o">
+</iframe>
+                </div>
+                <div class="col-xl-6" style="float:left;">
+                    <h1>Details</h1>
+                    <p style="text-align:justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quam dolorem eligendi ex, possimus placeat at amet consectetur harum officiis quaerat molestiae maxime fugiat consequatur obcaecati est quo veritatis. Voluptatem?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quam dolorem eligendi ex, possimus placeat at amet consectetur harum officiis quaerat molestiae maxime fugiat consequatur obcaecati est quo veritatis. Voluptatem?
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti quam dolorem eligendi ex, possimus placeat at amet consectetur harum officiis quaerat molestiae maxime fugiat consequatur obcaecati est quo veritatis. Voluptatem?
+                    </p>
+                </div>
+                </div>
+    </div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+// Draw the chart and set the chart values
+function drawChart() {
+  var data = google.visualization.arrayToDataTable([
+  ['Task', 'Hours per Day'],
+  ['SEO', 8],
+  ['Social Media', 2],
+  ['Backlinks', 4],
+  
+]);
+
+  // Optional; add a title and set the width and height of the chart
+  var options = {'title':'Website Traffic Overview', 'width':550, 'height':400};
+
+  // Display the chart inside the <div> element with id="piechart"
+  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+  chart.draw(data, options);
+}
+</script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales', 'Expenses'],
+          ['2004',  1000,      400],
+          ['2005',  1170,      460],
+          ['2006',  660,       1120],
+          ['2007',  1030,      540]
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          curveType: 'function',
+          legend: { position: 'bottom' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('curve_chart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+
+</body>
+</html>
